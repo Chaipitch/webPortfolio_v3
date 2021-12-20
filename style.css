@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Codystar&family=Roboto:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: grey;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0px;
+  background: white;
+}
+
+nav {
+  min-height: 10vh;
+  margin: auto;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav h1,
+nav ul {
+  font-size: 1.5 rem;
+  flex: 1;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
+nav li {
+  margin-right: 100px;
+  transition: all 0.2s ease;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section h2 {
+  font-size: 5rem;
+  color: white;
+}
+
+#hero {
+  text-align: center;
+  color: white;
+}
+
+#hero h4 {
+  font-family: "Codystar", cursive;
+  font-size: 2rem;
+}
+
+.home {
+  background: linear-gradient(to right top, #e53935, #e35d5b);
+}
+
+.about {
+  background: linear-gradient(to right top, #fc00ff, #00dbde);
+}
+.project {
+  background: linear-gradient(to right top, #2c3e50, #3498db);
+}
+.contact {
+  background: linear-gradient(to right top, #304352, #d7d2cc);
+}
+.bubble {
+  position: absolute;
+  z-index: -2;
+  background: linear-gradient(to right top, #e53935, #e35d5b);
+  transform: scale(2);
+  border-radius: 5px;
+  transition: all 0.2s ease-out;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 2px;
+  border-radius: 20px;
+  background-color: rgb(105, 105, 105);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1200px) {
+  nav li {
+    margin-right: 50px;
+    transition: all 0.2s ease;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .navLinks {
+    position: absolute;
+    right: -50px;
+    height: 92vh;
+    top: 8vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .navLinks li {
+    margin-top: 25%;
+    margin-left: 10%;
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-4px, -5px);
+}
